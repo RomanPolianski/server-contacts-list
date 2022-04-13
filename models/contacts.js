@@ -44,10 +44,6 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            birthday: {
-                type: DataTypes.DATEONLY,
-                allowNull: false,
-            },
             operator: {
                 type: DataTypes.STRING,
                 allowNull: false,
