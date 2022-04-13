@@ -28,5 +28,10 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "description": ""
+    "description": "",
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "es6": true
+    }
 }
