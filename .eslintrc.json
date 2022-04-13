@@ -8,6 +8,22 @@
     "parserOptions": {
         "ecmaVersion": "latest"
     },
-    "rules": {
-    }
+    "rules":{
+        "linebreak-style": "off",
+        "consistent-return": "off",
+        "comma-dangle": "off",
+        "prefer-destructuring": "off",
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "class-methods-use-this": "off",
+        "operator-linebreak": "off",
+        "object-curly-newline": "off",
+        "dot-notation": "off",
+        "import/no-dynamic-require": "off",
+        "arrow-body-style": "off",
+        "global-require": "off",
+        "no-restricted-syntax": "off",
+        "no-unreachable-loop": "off",
+        "newline-per-chained-call": "off",
+        "no-await-in-loop": "off"
+      } 
 }

@@ -1,22 +1,29 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.3",
-    "pg": "^8.7.3",
-    "pg-hstore": "^2.3.4"
-  },
-  "devDependencies": {
-    "eslint": "^8.13.0",
-    "nodemon": "^2.0.15"
-  },
-  "name": "server-contact-list",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.3",
+        "pg": "^8.7.3",
+        "pg-hstore": "^2.3.4"
+    },
+    "devDependencies": {
+        "eslint": "^8.13.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.3.7",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.6.2"
+    },
+    "name": "server-contact-list",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon index.js",
+        "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{js,css,html}\"",
+          "lint-staged": {
+            "*.js": "eslint --cache --fix"
+          }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
 }
