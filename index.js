@@ -13,10 +13,10 @@ const start = async () => {
     try {
         app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
         await sequelize.authenticate();
-        console.log('Database conected')
+        console.log('Database conected');
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 start();
