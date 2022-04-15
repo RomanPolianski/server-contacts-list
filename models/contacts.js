@@ -3,8 +3,8 @@
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class contacts extends Model {
-        static associate( { tasks }) {
-            this.hasMany(tasks, {foreignKey: 'contact_id'})
+        static associate({ tasks }) {
+            this.hasMany(tasks, { foreignKey: 'contact_id' });
         }
     }
     contacts.init(
@@ -42,6 +42,9 @@ module.exports = (sequelize, DataTypes) => {
             operator: {
                 type: DataTypes.STRING,
                 allowNull: false,
+            },
+            os: {
+                type: DataTypes.STRING,
             },
         },
         {
