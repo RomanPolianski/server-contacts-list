@@ -81,6 +81,21 @@ class ContactsController {
             res.status(500).json({ error: error.message });
         }
     }
+
+    async deleteContact(req, res) {
+        try {
+            const id = req.params.id;
+            const contact = await contacts.destroy({
+                where: { contact_id: id },
+            });
+
+            res.json({
+                message: 'Contact deleted successfully',
+            });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
 }
 
 module.exports = new ContactsController();
