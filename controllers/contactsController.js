@@ -47,9 +47,36 @@ class ContactsController {
         }
     }
 
-    updateContact(req, res) {
+    async updateContact(req, res) {
         try {
-            console.log('Update');
+            const { id, name, lastName, company, phone, email, adress, operator, os, tasksUser } = req.body;
+            const contact = await contacts.update(
+                {
+                    contact_id: id,
+                    name: name,
+                    last_name: lastName,
+                    company: company,
+                    phone: phone,
+                    email: email,
+                    adress: adress,
+                    operator: operator,
+                    os: os,
+                },
+                { where: { contact_id: id } }
+            );
+
+            for (const key of tasksUser) {
+                await tasks.update(
+                    {
+                        task_name: key.name,
+                        task_status: key.status,
+                    },
+                    { where: { task_id: key.id ? key.id : (key.id = Math.floor(Math.random() * (1000 - 1 + 1)) + 1) } }
+                );
+            }
+            res.json({
+                message: 'Contact updated successfully',
+            });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
