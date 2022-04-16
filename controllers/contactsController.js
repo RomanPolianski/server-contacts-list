@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const { sequelize, contacts } = require('../models')
+const { sequelize, contacts, tasks } = require('../models');
 
 class ContactsController {
     async getContacts(req, res) {
@@ -13,9 +13,35 @@ class ContactsController {
         }
     }
 
-    createContact(req, res) {
+    async createContact(req, res) {
         try {
-            console.log('Create');
+            const { id, name, lastName, company, phone, email, adress, operator, os, tasksUser } = req.body;
+            const contact = await contacts.create({
+                contact_id: id,
+                name: name,
+                last_name: lastName,
+                company: company,
+                phone: phone,
+                email: email,
+                adress: adress,
+                operator: operator,
+                os: os,
+            });
+
+            const t = [];
+
+            for (const key of tasksUser) {
+                const task = await tasks.create({
+                    task_name: key.name,
+                    task_status: key.status,
+                    contact_id: id,
+                });
+                t.push(task);
+            }
+
+            res.json({
+                message: 'Contact created successfully',
+            });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
