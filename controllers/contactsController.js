@@ -89,6 +89,10 @@ class ContactsController {
                 where: { contact_id: id },
             });
 
+            const task = await tasks.destroy({
+                where: { contact_id: id },
+            })
+
             res.json({
                 message: 'Contact deleted successfully',
             });
