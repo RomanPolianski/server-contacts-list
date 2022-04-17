@@ -14,12 +14,6 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "postgres",
-    "password": "Roma03012001",
-    "database": "contacts",
-    "host": "localhost",
-    "dialect": "postgres",
-    "operatorsAliases": false,
     "use_env_variable": "DATABASE_URL"
   }
 }
