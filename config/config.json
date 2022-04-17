@@ -1,19 +1,26 @@
 {
-  "development": {
-    "username": "postgres",
-    "password": "Roma03012001",
-    "database": "contacts",
-    "host": "localhost",
-    "dialect": "postgres"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "use_env_variable": "DATABASE_URL"
-  }
+    "development": {
+        "username": null,
+        "password": null,
+        "database": "contacts",
+        "host": "localhost",
+        "dialect": "postgres"
+    },
+    "test": {
+        "username": null,
+        "password": null,
+        "database": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "use_env_variable": "DATABASE_URL",
+        "dialect": "postgres",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+            }
+        }
+    }
 }
