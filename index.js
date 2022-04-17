@@ -3,7 +3,7 @@ const cors = require('cors');
 const router = require('./routes');
 const { sequelize } = require('./models');
 
-const PORT = 5000;
+const PORT = 5000 || process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: ['https://romanpolianski.github.io', 'http://localhost:3000'] }));

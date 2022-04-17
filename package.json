@@ -20,6 +20,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "nodemon index.js",
+        "start": "node index.js",
         "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{js,css,html}\"",
         "lint-staged": {
             "*.js": "eslint --cache --fix"
